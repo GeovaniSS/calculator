@@ -1,0 +1,123 @@
+@charset "UTF-8"; 
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+}
+
+:root {
+  /* Backgrounds */
+  --main-bg: #484170;
+  --display-bg: #1E1834;
+  --keypad-bg: #282343;
+
+  /* Keys */
+  --dark-key-bg: #746397;
+  --dark-key-shadow: 0 6px #564072;
+  --light-key-bg: #DEDCEA;
+  --light-key-shadow: 0 6px #9A97B4;
+
+  /* Text */
+  --dark-key-text: #fff; 
+  --light-key-text: #4F445A;
+  --previous-display: rgba(255, 255, 255, 0.7);
+
+  /* Border-radius */
+  --display-border: 8px; 
+
+  /* Padding */
+
+  /* Font size Numbers */
+  --number-fz : 32px; 
+}
+
+body {
+  font-family: 'Spartan';
+  font-weight: bold;
+  background-color: var(--main-bg);
+}
+
+section#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.calculator .display {
+  display: grid;
+  grid-template-rows: 50px minmax(60px, auto);
+  justify-items: end;
+  align-items: center;
+  word-break: break-all;
+  word-wrap: break-word;
+  padding: 10px 20px;
+  background-color: var(--display-bg);
+  border-radius: var(--display-border);
+}
+
+.calculator .display .previous-op {
+  font-size: 18px;
+  color: var(--previous-display);
+}
+
+.calculator .display .current-op{
+  font-size: 40px;
+  color: var(--dark-key-text);
+}
+
+.calculator .keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  background-color: var(--keypad-bg);
+  border-radius: var(--display-border);
+}
+
+.calculator .keypad > button {
+  display: grid;
+  grid-template-rows: 80px;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-family: 'Spartan';
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--display-border); 
+}
+
+.calculator .keypad > .span-two {
+  background-color: var(--dark-key-bg);
+  color: var(--dark-key-text);
+  box-shadow: var(--dark-key-shadow);
+}
+
+.calculator .keypad > .span-two:first-child {
+  grid-column: 1/3;
+}
+
+.calculator .keypad > .span-two:last-child {
+  grid-column: 3/5;
+}
+
+.calculator .keypad > button[data-number], .calculator .keypad > button[data-operator] {
+  background-color: var(--light-key-bg);
+  color: var(--light-key-text);
+  box-shadow: var(--light-key-shadow);
+}
