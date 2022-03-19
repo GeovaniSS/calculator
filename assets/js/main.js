@@ -43,14 +43,15 @@ function createCalculator() {
       if(this.operation === '-') result = previousOperandFloat - currentOperandFloat
       if(this.operation === '*') result = previousOperandFloat * currentOperandFloat
       if(this.operation === '÷') result = previousOperandFloat / currentOperandFloat
+      if(this.operation === '%') result = previousOperandFloat/100 * currentOperandFloat 
 
       this.clear()
       this.currentOperand = String(result)
     },
 
     formatNumber(number) {
-      if(!number) return ''
-      return new Intl.NumberFormat('en', {maximumFractionDigits:0, minimumFractionDigits:0}).format(number)
+      if(!number || number === '.') return ''
+      return new Intl.NumberFormat('pt-BR', {maximumFractionDigits:0, minimumFractionDigits:0}).format(number)
     },
 
     updateDisplay() {
