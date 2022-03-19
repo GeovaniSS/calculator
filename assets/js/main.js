@@ -1,53 +1,75 @@
 function createCalculator() {
-  const numberBtns = document.querySelectorAll('[data-number]')
-  const operatorBtns = document.querySelectorAll('[data-operator]')
-  const clearBtn = document.querySelector('[data-all-clear]')
-  const deleteBtn = document.querySelector('[data-delete')
-  const equalBtn = document.querySelector('[data-equal]')
-  const previousOp = document.querySelector('.previous-op')
-  const currentOp = document.querySelector('.current-op')
-
+  const previousOperandElement = document.querySelector('.previous-op')
+  const currentOperandElement = document.querySelector('.current-op')
+  
   return {
-    startCalculator() {
-      this.handleButtonClick()
+    currentOperand: '',
+    previousOperand: '', 
+    operation: null,
+    
+    clear() {
+      this.previousOperand = ''
+      this.currentOperand = ''
+      this.operation = null
+    }, 
+    
+    deleteNumber() {
+      this.currentOperand = this.currentOperand.slice(0, -1)
     },
 
-    handleButtonClick() {
-      document.addEventListener('click', (e) => {
-        const el = e.target
-
-        if(el.hasAttribute('data-all-clear')) this.clearDisplay()
-        if(el.hasAttribute('data-delete'))    this.deleteNumber()
-        if(el.hasAttribute('data-operator'))  this.addOperatorDisplay(el.innerText)
-        if(el.hasAttribute('data-number'))    this.addNumberDisplay(el.innerText)
-        if(el.hasAttribute('data-equal'))     this.showResult()
-      })
+    addNumber(number) {
+      if(number === '.' && this.currentOperand.includes('.')) return
+      this.currentOperand += number
     },
     
-    clearDisplay() {
-      currentOp.innerText = ''
-      previousOp.innerText = ''
-    }, 
+    chooseOperation(operation) {
+      if(!this.currentOperand) return
+      if(this.previousOperand) this.calculate()
+      
+      this.operation = operation
+      this.previousOperand = this.currentOperand
+      this.currentOperand = ''
+    },
+    
+    calculate() {
+      let result;
 
-    deleteNumber() {
-      currentOp.innerText = currentOp.innerText.slice(0, -1)
+      const previousOperandFloat = Number.parseFloat(this.previousOperand)
+      const currentOperandFloat = Number.parseFloat(this.currentOperand)
+
+      if(isNaN(previousOperandFloat) || isNaN(currentOperandFloat)) return
+
+      if(this.operation === '+') result = previousOperandFloat + currentOperandFloat
+      if(this.operation === '-') result = previousOperandFloat - currentOperandFloat
+      if(this.operation === '*') result = previousOperandFloat * currentOperandFloat
+      if(this.operation === '÷') result = previousOperandFloat / currentOperandFloat
+
+      this.clear()
+      this.currentOperand = String(result)
     },
 
-    addOperatorDisplay(operator) {
-      currentOp.innerText += operator
+    formatNumber(number) {
+      if(!number) return ''
+      return new Intl.NumberFormat('en', {maximumFractionDigits:0, minimumFractionDigits:0}).format(number)
     },
 
-    addNumberDisplay(number) {
-      currentOp.innerText += number
+    updateDisplay() {
+      previousOperandElement.innerText = `${this.formatNumber(this.previousOperand)} ${this.operation || ''}`
+      currentOperandElement.innerText = this.formatNumber(this.currentOperand)
     },
-
-    showResult() {
-      const result = eval(currentOp.innerText)
-
-      currentOp.innerText = result
-    }
   }
 }
 
 const calculator = createCalculator()
-calculator.startCalculator()
+
+document.addEventListener('click', (e) => {
+  const el = e.target
+
+  if(el.hasAttribute('data-all-clear')) calculator.clear()
+  if(el.hasAttribute('data-delete')) calculator.deleteNumber()
+  if(el.hasAttribute('data-operator')) calculator.chooseOperation(el.innerText) 
+  if(el.hasAttribute('data-number')) calculator.addNumber(el.innerText)
+  if(el.hasAttribute('data-equal')) calculator.calculate()
+  
+  calculator.updateDisplay()
+})

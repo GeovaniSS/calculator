@@ -27,7 +27,7 @@
   --previous-display: rgba(255, 255, 255, 0.7);
 
   /* Border-radius */
-  --display-border: 8px; 
+  --calculator-border: 8px; 
 
   /* Padding */
 
@@ -35,9 +35,14 @@
   --number-fz : 32px; 
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: 'Spartan';
   font-weight: bold;
+  font-size: 1.6rem;
   background-color: var(--main-bg);
 }
 
@@ -65,16 +70,16 @@ section#container {
   word-wrap: break-word;
   padding: 10px 20px;
   background-color: var(--display-bg);
-  border-radius: var(--display-border);
+  border-radius: var(--calculator-border);
 }
 
 .calculator .display .previous-op {
-  font-size: 18px;
+  font-size: 1.8rem;
   color: var(--previous-display);
 }
 
 .calculator .display .current-op{
-  font-size: 40px;
+  font-size: 4rem;
   color: var(--dark-key-text);
 }
 
@@ -86,7 +91,7 @@ section#container {
   gap: 20px;
   padding: 40px;
   background-color: var(--keypad-bg);
-  border-radius: var(--display-border);
+  border-radius: var(--calculator-border);
 }
 
 .calculator .keypad > button {
@@ -94,12 +99,12 @@ section#container {
   grid-template-rows: 80px;
   justify-content: center;
   align-items: center;
-  font-size: 32px;
+  font-size: 3.2rem;
   font-family: 'Spartan';
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: var(--display-border); 
+  border-radius: var(--calculator-border); 
 }
 
 .calculator .keypad > .span-two {
