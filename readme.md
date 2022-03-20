@@ -1,12 +1,12 @@
 <h1 align="center">Calculadora</h1>
 
-<p align="center">
-    - [Sobre](#sobre📖)
-    - [Conceitos](#conceitos✏️)
-    - [Funcionalidades](#funcionalidades⚙️)
-    - [Tecnologias](#tecnologias🛠️)
-    - [Aplicação](#aplicação💻)
-</p>
+
+- [Sobre](#sobre📖)
+- [Conceitos](#conceitos✏️)
+- [Funcionalidades](#funcionalidades⚙️)
+- [Tecnologias](#tecnologias🛠️)
+- [Aplicação](#aplicação💻)
+
 
 ## Sobre📖
 Esse projeto foi desenvolvido com o intuito de praticar as funções fábrica e o uso do this, e também para o exercício da lógica em JavaScript. 
