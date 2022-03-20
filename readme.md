@@ -19,7 +19,7 @@ Principais conceitos que foram usados no desenvolvimento do projeto:
 - Funções Fábrica
 - Propriedade hasAttribute
 
-## <h2 id="funcionalidades">Funcionalidades⚙️
+## <h2 id="funcionalidades"/>Funcionalidades⚙️
 Principais funcionalidades do projeto: 
 - [x] Display que mostra a operação atual e a anterior
 - [x] Operações Matemáticas com números
