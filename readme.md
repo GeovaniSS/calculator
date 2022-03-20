@@ -7,7 +7,7 @@
 ## Sobre📖
 Esse projeto foi desenvolvido com o intuito de praticar as funções fábrica e o uso do this, e também para o exercício da lógica em JavaScript. 
 
-<img src="">
+<img src="readme.gif">
 
 ## Conceitos✏️
 Principais conceitos que foram usados no desenvolvimento do projeto:
