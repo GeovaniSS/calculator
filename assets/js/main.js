@@ -57,7 +57,8 @@ function createCalculator() {
       const integerDisplay = new Intl.NumberFormat('en-US', {maximumFractionDigits:0}).format(integerDigits)
   
       if (decimalDigits) return `${integerDisplay}.${decimalDigits}`
-      return `${integerDisplay}`
+      if(number.includes('.')) return integerDisplay + '.'
+      return integerDisplay
     },
 
     updateDisplay() {
