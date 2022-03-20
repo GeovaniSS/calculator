@@ -9,7 +9,7 @@ Esse projeto foi desenvolvido com o intuito de praticar as funções fábrica e 
 
 <img src="readme.gif">
 
-## <h2 id="conceitos">Conceitos✏️<h2>
+## <h2 id="conceitos">Conceitos✏️
 Principais conceitos que foram usados no desenvolvimento do projeto:
 - HTML Semântico
 - Flexbox
@@ -19,7 +19,7 @@ Principais conceitos que foram usados no desenvolvimento do projeto:
 - Funções Fábrica
 - Propriedade hasAttribute
 
-## <h2 id="funcionalidades">Funcionalidades⚙️<h2>
+## <h2 id="funcionalidades">Funcionalidades⚙️
 Principais funcionalidades do projeto: 
 - [x] Display que mostra a operação atual e a anterior
 - [x] Operações Matemáticas com números
@@ -27,13 +27,13 @@ Principais funcionalidades do projeto:
 - [x] Botão Delete que remove o último número
 - [x] Formatação de números 
 
-## <h2 id="tecnologias">Tecnologias🛠️<h2>
+## <h2 id="tecnologias">Tecnologias🛠️
 As seguintes ferramentas foram usadas no desenvolvimento do projeto:
 - HTML
 - CSS
 - JavaScript
 
-## <h2 id="aplicação">Aplicação💻<h2>
+## <h2 id="aplicação">Aplicação💻
 Teste a aplicação na sua máquina ou no celular [clicando aqui](https://calculator-math-js.netlify.app) 
 <hr>
 Feito com 💙 e ☕ por <a href="https://www.linkedin.com/in/geovani-silva-21298921b/">Geovani Silva</a>
