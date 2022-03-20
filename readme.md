@@ -4,7 +4,7 @@
     <a href="#sobre">Sobre</a> | <a href="#conceitos">Conceitos</a> | <a href="#funcionalidades">Funcionalidades</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#aplicação">Aplicação</a>
 </p>
 
-## <h2 id="sobre">Sobre📖<h2>
+## <h2 id="sobre">Sobre📖
 Esse projeto foi desenvolvido com o intuito de praticar as funções fábrica e o uso do this, e também para o exercício da lógica em JavaScript. 
 
 <img src="readme.gif">
