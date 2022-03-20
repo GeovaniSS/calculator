@@ -41,7 +41,7 @@ function createCalculator() {
 
       if(this.operation === '+') result = previousOperandFloat + currentOperandFloat
       if(this.operation === '-') result = previousOperandFloat - currentOperandFloat
-      if(this.operation === '*') result = previousOperandFloat * currentOperandFloat
+      if(this.operation === 'x') result = previousOperandFloat * currentOperandFloat
       if(this.operation === '÷') result = previousOperandFloat / currentOperandFloat
 
       this.clear()

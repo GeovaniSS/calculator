@@ -103,6 +103,10 @@ section#container {
   border-radius: 6px; 
 }
 
+.calculator .keypad > .multiplication {
+  text-transform: lowercase;
+}
+
 .calculator .keypad > .span-two {
   font-size: 2.8rem;
   background-color: var(--dark-key-bg);
