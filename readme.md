@@ -1,7 +1,11 @@
 <h1 align="center">Calculadora</h1>
 
 <p align="center">
-    <a href="##sobre">Sobre</a> | <a href="##conceitos">Conceitos</a> | <a href="##funcionalidades">Funcionalidades</a> | <a href="##tecnologias">Tecnologias</a> | <a href="##aplicação">Solução</a>
+    - [Sobre](#sobre📖)
+    - [Conceitos](#conceitos✏️)
+    - [Funcionalidades](#funcionalidades⚙️)
+    - [Tecnologias](#tecnologias🛠️)
+    - [Aplicação](#aplicação💻)
 </p>
 
 ## Sobre📖
