@@ -85,29 +85,31 @@ section#container {
 
 .calculator .keypad {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
+  grid-template-columns: repeat(4, minmax(45px, 100px));
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 40px;
+  padding: 20px;
   background-color: var(--keypad-bg);
   border-radius: var(--calculator-border);
 }
 
 .calculator .keypad > button {
   display: grid;
-  grid-template-rows: 80px;
+  grid-template-rows: 70px;
   justify-content: center;
+  justify-items: center;
   align-items: center;
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-family: 'Spartan';
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: var(--calculator-border); 
+  border-radius: 6px; 
 }
 
 .calculator .keypad > .span-two {
+  font-size: 2.8rem;
   background-color: var(--dark-key-bg);
   color: var(--dark-key-text);
   box-shadow: var(--dark-key-shadow);
@@ -125,4 +127,22 @@ section#container {
   background-color: var(--light-key-bg);
   color: var(--light-key-text);
   box-shadow: var(--light-key-shadow);
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+
+  .calculator {
+    padding: 20px;
+  }
+
+  .calculator .display {
+    grid-template-rows: 40px minmax(40px, auto);
+  }
+
+  .calculator .keypad {
+    gap: 15px;
+  }
 }
