@@ -3,8 +3,8 @@ function createCalculator() {
   const currentOperandElement = document.querySelector('.current-op')
   
   return {
-    currentOperand: '',
     previousOperand: '', 
+    currentOperand: '',
     operation: null,
     
     clear() {
@@ -18,7 +18,7 @@ function createCalculator() {
     },
 
     addNumber(number) {
-      if(number === '.' && this.currentOperand.includes('.')) return
+      if(number === '.' && !this.currentOperand || number === '.' && this.currentOperand.includes('.')) return
       this.currentOperand += number
     },
     
@@ -43,15 +43,21 @@ function createCalculator() {
       if(this.operation === '-') result = previousOperandFloat - currentOperandFloat
       if(this.operation === '*') result = previousOperandFloat * currentOperandFloat
       if(this.operation === '÷') result = previousOperandFloat / currentOperandFloat
-      if(this.operation === '%') result = previousOperandFloat/100 * currentOperandFloat 
 
       this.clear()
       this.currentOperand = String(result)
     },
 
-    formatNumber(number) {
-      if(!number || number === '.') return ''
-      return new Intl.NumberFormat('pt-BR', {maximumFractionDigits:0, minimumFractionDigits:0}).format(number)
+    formatNumber(number) {      
+      const integerDigits = number.split('.')[0]
+      const decimalDigits = number.split('.')[1]
+
+      if(!integerDigits) return ''
+
+      const integerDisplay = new Intl.NumberFormat('en-US', {maximumFractionDigits:0}).format(integerDigits)
+  
+      if (decimalDigits) return `${integerDisplay}.${decimalDigits}`
+      return `${integerDisplay}`
     },
 
     updateDisplay() {
@@ -68,8 +74,8 @@ document.addEventListener('click', (e) => {
 
   if(el.hasAttribute('data-all-clear')) calculator.clear()
   if(el.hasAttribute('data-delete')) calculator.deleteNumber()
-  if(el.hasAttribute('data-operator')) calculator.chooseOperation(el.innerText) 
   if(el.hasAttribute('data-number')) calculator.addNumber(el.innerText)
+  if(el.hasAttribute('data-operator')) calculator.chooseOperation(el.innerText) 
   if(el.hasAttribute('data-equal')) calculator.calculate()
   
   calculator.updateDisplay()
