@@ -81,3 +81,11 @@ document.addEventListener('click', (e) => {
   
   calculator.updateDisplay()
 })
+
+document.addEventListener('keypress', (e) => {
+  e.preventDefault()
+  if (e.keyCode === 13) {
+    calculator.calculate()
+    calculator.updateDisplay()
+  }
+})
